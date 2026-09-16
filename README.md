@@ -64,6 +64,51 @@ Set Label to Time Range and Token time_range
 Again Add Input
 
 Select Submit
-Note: For all future panel, set the time to time_range for consistency.
+
+<img width="1393" height="601" alt="image" src="https://github.com/user-attachments/assets/48aee767-0616-41b5-a702-91d1071cdfe8" />
+
+# **Authentication Overview Panels**
+
+Goal: Give a quick summary of SSH activity.
+
+1. Total SSH Events
+
+Click on Add Panel
+
+Under New, choose Single Value
+
+Use Shared Time Picker time_range
+
+Set Content Title to "Total SSH Events"
+
+Enter the Search String as below
+
+source="ssh_logs.json" host="LinuxServer" sourcetype="_json"
+ | stats count AS "Total SSH Events"
+
+<img width="1395" height="626" alt="image" src="https://github.com/user-attachments/assets/88ef7831-1d16-48e6-80d6-3cc8ad2adef3" />
+
+2.Successful Logins
+
+Click on Add Panel
+
+Under New, choose Single Value
+
+Use Shared Time Picker time_range
+
+Set Content Title to "Successful Logins"
+
+Enter the Search String as below:
+
+source="ssh_logs.json" host="LinuxServer" sourcetype="_json" event_type="Successful SSH Login" 
+| stats count AS "Successful Logins"
+
+<img width="1404" height="638" alt="image" src="https://github.com/user-attachments/assets/f561da04-0f27-47f2-ae5e-dfb3b2245056" />
+
+
+
+
+
+
 
 
